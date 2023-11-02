@@ -3,6 +3,8 @@
 use App\Http\Controllers\orderController;
 use App\Models\order;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,5 @@ Route::get('/admin/detall/{id}', function ($id) {
 })->name("detall");
 
 Route::patch('/admin/update/{id}', [orderController::class, 'update'])->name("update");
+
+Route::get('/send', [MailController::class,'index']);
